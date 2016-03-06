@@ -1,5 +1,5 @@
 chrome.contextMenus.create({
-  "title": "LookUpInOALD",
+  "title": "LookUp",
   "type": "normal", 
   "contexts": ["selection"],
   "onclick":function() {
