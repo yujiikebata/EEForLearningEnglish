@@ -1,5 +1,5 @@
 chrome.contextMenus.create({
-  "title": "LookUp",
+  "title": "LookUpThisWord",
   "type": "normal", 
   "contexts": ["selection"],
   "onclick":function() {
@@ -12,9 +12,9 @@ chrome.contextMenus.create({
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.message === "open_new_tab") {
-    var oald = 'http://www.oxfordlearnersdictionaries.com/search/english/?q=' + request.word;
     var eow = 'http://eow.alc.co.jp/search?q=' + request.word;
-    chrome.tabs.create({ "url": oald });
+    var oald = 'http://www.oxfordlearnersdictionaries.com/search/english/?q=' + request.word;
     chrome.tabs.create({ "url": eow });
+    chrome.tabs.create({ "url": oald });
   }
 });
